@@ -1,0 +1,29 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+    <div class="jumbotron" style="background-color:#00AF42">
+        <h1 class="display-3" style="color: ivory">Topics</h1>
+
+        <p class="lead" style="color: ivory" >Choose or add a new topic.
+        </p>
+
+        <a class="btn btn-lg btn-warning" style="color: #0056C4" href="{% url 'learning_logs:new_topic' %}"
+            role="button">New Topic &raquo;</a>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+    <ul>
+        {% for topic in topics %}
+            <div>
+                <li><h3>
+                    <a style="color: #00AF42" href="{% url 'learning_logs:topic' topic.id %}">{{topic}}</a>
+                </h3></li>
+            </div>
+        {% empty %}
+            <li><h3>No topics have been added yet.</h3></li>
+        {% endfor %}
+    </ul>
+
+    <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a></h3>
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends "learning_logs/base.html" %}
+
+
+{% block page_header %}
+
+    <div class="jumbotron" style="background-color:#00AF42">
+        
+        <h1 class="display-3" style="color: ivory">Track your learning.</h1>
+
+        <p class="lead" style="color: ivory">Make your own Learning Log, and keep a list of the 
+            topics you're learning about. Whenever you learn something new
+            about a topic, make an entry summarizing what you've learned.
+        </p>
+        {% if user.is_authenticated %}
+            <a class="btn btn-lg btn-warning" style="color:#0056C4" href="{% url 'learning_logs:topics' %}"
+            role="button">Begin &raquo;</a>
+        {% else %}
+            <a class="btn btn-lg btn-warning" style="color: #0056C4" href="{% url 'users:register' %}"
+            role="button">Register &raquo;</a>
+        {% endif %}
+
+    </div>
+
+{% endblock page_header %}
+
+
+{% block content %}
+
+    <div class="container">
+        
+        <h2>What is a Learning Log</h2>
+       <p>
+            The Learning Log is a technique to help students focus on what they are learning in their classes by 
+            writing their thoughts, reactions, and responses to class lectures, videos, or discussions. 
+            A Learning Log is a written reflection of the students's perceptions of what is being 
+            learned and how they are learning.
+       </p> 
+    </div>
+
+    <div class="container">
+
+        <h2>Benefits of using a Learning Log</h2>
+        <p>
+            A learning log is an learning tool which is designed to improve the learning experience,
+            while facilitating exchanges between students and teachers. Learning logs are used in schools
+            all over the world, and there are a number of different approaches to them. 
+            In addition to being used in predictable school environments, learning logs can also be
+            very beneficial to homeschoolers and other students pursuing non-tradition education.
+        </p>
+        <p>
+            A learning assessment refers to the measurement of a student’s capabilities, progress and academic outcome.
+            Learning assessments are important because both students and teachers can get a clear picture of what a 
+            student can do academically rather than what he or she can’t do. When conducting a learning assessment, 
+            instructors consider past and present academic performances as well as the student’s values, behaviors 
+            and attitudes toward learning. 
+        </p>
+        <p>
+            Learning Logs are useful because they promote metacognition. 
+            They are also useful tools for teachers because they can reveal
+            students' perceptions (and misperceptions) of the information,
+            as well as reveal how they are reacting to the way the material is being taught.
+        </p>
+
+    </div>
+    
+{% endblock content %}
+    
+    
